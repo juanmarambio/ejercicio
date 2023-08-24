@@ -33,7 +33,7 @@ jobs:
       full_docker_image_tag: ${{ steps.build_image.outputs.full_docker_image_tag }}
       image_tag: ${{ steps.build_image.outputs.image_tag }}
     runs-on: ubuntu-latest
-     needs:[pycharm, docker-grype-project]
+      needs:[pycharm, docker-grype-project]
     steps:
       - name: Check out Git repository
         uses: actions/checkout@v3
@@ -51,8 +51,8 @@ jobs:
         id: build_image
         env:
           REGISTRY: ghcr.io
-          IMAGE_NAME: ${{ github.repository }}
-          ECR_REPOSITORY: ${{ github.repository }}
+          IMAGE_NAME: ${{ juanmarambio.ejercicio }}
+          ECR_REPOSITORY: ${{ juanmarambio.ejercicio }}
           IMAGE_TAG: ${{ env.IMAGE_TAG }}
         run: |
           echo REGISTRY: $REGISTRY
