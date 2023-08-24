@@ -34,6 +34,7 @@ jobs:
       image_tag: ${{ steps.build_image.outputs.image_tag }}
     runs-on: ubuntu-latest
     #needs: [pycharm, docker-grype-project]
+    needs: [pycharm]
     steps:
       - name: Check out Git repository
         uses: actions/checkout@v3
