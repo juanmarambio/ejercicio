@@ -26,6 +26,7 @@ jobs:
         uses: tonybaloney/pycharm-security@master
         with: 
           fail_on_warnings: "no"
+          
   docker-grype-project:
     name: Grype (Anchore) Project Scan
     needs: [gitleaks]
@@ -41,6 +42,7 @@ jobs:
           path: "."
           fail-build: true
           output-format: table
+          
   docker-build:
     name: Build Docker image
     outputs:
